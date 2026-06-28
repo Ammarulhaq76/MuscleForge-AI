@@ -1,0 +1,82 @@
+/* ── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Design Tokens ─────────────────────────────── */
+:root {
+  /* Brand */
+  --green-50:  #f0fdf8;
+  --green-100: #ccfbec;
+  --green-200: #99f6d6;
+  --green-500: #10b981;
+  --green-600: #059669;
+  --green-700: #047857;
+  --green-800: #065f46;
+
+  /* Neutrals */
+  --gray-50:  #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Semantic */
+  --color-bg:        #f4f6f9;
+  --color-surface:   #ffffff;
+  --color-surface-2: #f8f9fb;
+  --color-border:    rgba(0, 0, 0, 0.08);
+  --color-border-md: rgba(0, 0, 0, 0.14);
+  --color-text:      #111827;
+  --color-text-muted: #6b7280;
+  --color-text-faint: #9ca3af;
+
+  /* Warnings / errors */
+  --amber-bg:     #fffbeb;
+  --amber-border: #fcd34d;
+  --amber-text:   #92400e;
+  --red-bg:       #fef2f2;
+  --red-border:   #fca5a5;
+  --red-text:     #b91c1c;
+
+  /* Radii */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-green: 0 4px 14px rgba(16,185,129,0.28);
+}
+
+/* ── Base ───────────────────────────────────────── */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+button  { font-family: inherit; cursor: pointer; }
+input, textarea { font-family: inherit; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Animations ─────────────────────────────────── */
+@keyframes spin     { to { transform: rotate(360deg); } }
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shimmer  { 0%,100%{ opacity:.45; } 50%{ opacity:.9; } }
+@keyframes pulse    { 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.05); } }
+
+.anim-fade-up { animation: fadeUp 0.35s cubic-bezier(.22,.68,0,1.1) forwards; }
+
+/* ── Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; }
+::-webkit-scrollbar-thumb  { background: var(--gray-300); border-radius: 4px; }
